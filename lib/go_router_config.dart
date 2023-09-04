@@ -1,6 +1,7 @@
 import 'package:cubit_go_router_challenge/cubit/settings_cubit.dart';
 import 'package:cubit_go_router_challenge/cubit/volume_cubit.dart';
 import 'package:cubit_go_router_challenge/home_screen.dart';
+import 'package:cubit_go_router_challenge/luminosity_screen.dart';
 import 'package:cubit_go_router_challenge/settings_screen.dart';
 import 'package:cubit_go_router_challenge/volume_screen.dart';
 import 'package:flutter/material.dart';
@@ -28,6 +29,13 @@ final GoRouter goRouterConfig = GoRouter(
           builder: (BuildContext context, GoRouterState state) {
             return BlocProvider<SettingsCubit>(create:(BuildContext context) => SettingsCubit(),
             child: const VolumeScreen());
+          },
+        ),
+        GoRoute(
+          path: 'luminosity',
+          builder: (BuildContext context, GoRouterState state) {
+            return BlocProvider<SettingsCubit>(create:(BuildContext context) => SettingsCubit(),
+                child: const LuminosityScreen());
           },
         ),
       ],

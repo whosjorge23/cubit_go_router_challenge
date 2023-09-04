@@ -27,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ElevatedButton(onPressed: (){
               context.push('/volume');
             }, child: const Text("Volume")),
-            ElevatedButton(onPressed: (){}, child: const Text("Luminosity")),
+            ElevatedButton(onPressed: (){ context.push('/luminosity');}, child: const Text("Luminosity")),
           ],
         ),
       ),

@@ -5,9 +5,13 @@ part 'settings_state.dart';
 part 'settings_cubit.freezed.dart';
 
 class SettingsCubit extends Cubit<SettingsState> {
-  SettingsCubit() : super(SettingsState.initial(0));
+  SettingsCubit() : super(SettingsState.initial(0,0));
 
   void updateVolumeValue(double value) {
     emit(state.copyWith(volumeValue: value));
+  }
+
+  void updateLuminosityValue(double value) {
+    emit(state.copyWith(luminosityValue: value));
   }
 }

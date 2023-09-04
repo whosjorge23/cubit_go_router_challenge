@@ -17,19 +17,21 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$SettingsState {
   double get volumeValue => throw _privateConstructorUsedError;
+  double get luminosityValue => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(double volumeValue) initial,
+    required TResult Function(double volumeValue, double luminosityValue)
+        initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(double volumeValue)? initial,
+    TResult? Function(double volumeValue, double luminosityValue)? initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(double volumeValue)? initial,
+    TResult Function(double volumeValue, double luminosityValue)? initial,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -61,7 +63,7 @@ abstract class $SettingsStateCopyWith<$Res> {
           SettingsState value, $Res Function(SettingsState) then) =
       _$SettingsStateCopyWithImpl<$Res, SettingsState>;
   @useResult
-  $Res call({double volumeValue});
+  $Res call({double volumeValue, double luminosityValue});
 }
 
 /// @nodoc
@@ -78,11 +80,16 @@ class _$SettingsStateCopyWithImpl<$Res, $Val extends SettingsState>
   @override
   $Res call({
     Object? volumeValue = null,
+    Object? luminosityValue = null,
   }) {
     return _then(_value.copyWith(
       volumeValue: null == volumeValue
           ? _value.volumeValue
           : volumeValue // ignore: cast_nullable_to_non_nullable
+              as double,
+      luminosityValue: null == luminosityValue
+          ? _value.luminosityValue
+          : luminosityValue // ignore: cast_nullable_to_non_nullable
               as double,
     ) as $Val);
   }
@@ -96,7 +103,7 @@ abstract class _$$_InitialCopyWith<$Res>
       __$$_InitialCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({double volumeValue});
+  $Res call({double volumeValue, double luminosityValue});
 }
 
 /// @nodoc
@@ -110,11 +117,16 @@ class __$$_InitialCopyWithImpl<$Res>
   @override
   $Res call({
     Object? volumeValue = null,
+    Object? luminosityValue = null,
   }) {
     return _then(_$_Initial(
       null == volumeValue
           ? _value.volumeValue
           : volumeValue // ignore: cast_nullable_to_non_nullable
+              as double,
+      null == luminosityValue
+          ? _value.luminosityValue
+          : luminosityValue // ignore: cast_nullable_to_non_nullable
               as double,
     ));
   }
@@ -123,14 +135,16 @@ class __$$_InitialCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Initial implements _Initial {
-  const _$_Initial(this.volumeValue);
+  const _$_Initial(this.volumeValue, this.luminosityValue);
 
   @override
   final double volumeValue;
+  @override
+  final double luminosityValue;
 
   @override
   String toString() {
-    return 'SettingsState.initial(volumeValue: $volumeValue)';
+    return 'SettingsState.initial(volumeValue: $volumeValue, luminosityValue: $luminosityValue)';
   }
 
   @override
@@ -139,11 +153,13 @@ class _$_Initial implements _Initial {
         (other.runtimeType == runtimeType &&
             other is _$_Initial &&
             (identical(other.volumeValue, volumeValue) ||
-                other.volumeValue == volumeValue));
+                other.volumeValue == volumeValue) &&
+            (identical(other.luminosityValue, luminosityValue) ||
+                other.luminosityValue == luminosityValue));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, volumeValue);
+  int get hashCode => Object.hash(runtimeType, volumeValue, luminosityValue);
 
   @JsonKey(ignore: true)
   @override
@@ -154,27 +170,28 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(double volumeValue) initial,
+    required TResult Function(double volumeValue, double luminosityValue)
+        initial,
   }) {
-    return initial(volumeValue);
+    return initial(volumeValue, luminosityValue);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(double volumeValue)? initial,
+    TResult? Function(double volumeValue, double luminosityValue)? initial,
   }) {
-    return initial?.call(volumeValue);
+    return initial?.call(volumeValue, luminosityValue);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(double volumeValue)? initial,
+    TResult Function(double volumeValue, double luminosityValue)? initial,
     required TResult orElse(),
   }) {
     if (initial != null) {
-      return initial(volumeValue);
+      return initial(volumeValue, luminosityValue);
     }
     return orElse();
   }
@@ -209,10 +226,13 @@ class _$_Initial implements _Initial {
 }
 
 abstract class _Initial implements SettingsState {
-  const factory _Initial(final double volumeValue) = _$_Initial;
+  const factory _Initial(
+      final double volumeValue, final double luminosityValue) = _$_Initial;
 
   @override
   double get volumeValue;
+  @override
+  double get luminosityValue;
   @override
   @JsonKey(ignore: true)
   _$$_InitialCopyWith<_$_Initial> get copyWith =>

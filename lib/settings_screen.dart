@@ -15,7 +15,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget build(BuildContext context) {
     // final SettingsCubit settingsCubit = BlocProvider.of<SettingsCubit>(context);
     final settingsCubitState = context.watch<SettingsCubit>().state;
-    return settingsCubitState.when(initial: (updateVolumeValue){
+    return settingsCubitState.when(initial: (updateVolumeValue,updateLuminosityValue,){
       return Scaffold(
         appBar: AppBar(
           title: Text("Settings Screen"),
@@ -33,7 +33,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       context.read<SettingsCubit>().updateVolumeValue(value);
                     },
                   ),
-
+              Text("Luminosity"),
+              Slider(
+                value: settingsCubitState.luminosityValue,
+                min: 0.0,
+                max: 1.0,
+                onChanged: (value) {
+                  context.read<SettingsCubit>().updateLuminosityValue(value);
+                },
+              ),
             ],
           ),
         ),
