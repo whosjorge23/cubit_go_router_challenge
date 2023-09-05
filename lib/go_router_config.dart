@@ -20,22 +20,19 @@ final GoRouter goRouterConfig = GoRouter(
         GoRoute(
           path: 'settings',
           builder: (BuildContext context, GoRouterState state) {
-            return BlocProvider<SettingsCubit>(create: (BuildContext context) => SettingsCubit(),
-            child: const SettingsScreen());
+            child: return const SettingsScreen();
           },
         ),
         GoRoute(
           path: 'volume',
           builder: (BuildContext context, GoRouterState state) {
-            return BlocProvider<SettingsCubit>(create:(BuildContext context) => SettingsCubit(),
-            child: const VolumeScreen());
+            child: return const VolumeScreen();
           },
         ),
         GoRoute(
           path: 'luminosity',
           builder: (BuildContext context, GoRouterState state) {
-            return BlocProvider<SettingsCubit>(create:(BuildContext context) => SettingsCubit(),
-                child: const LuminosityScreen());
+                child: return const LuminosityScreen();
           },
         ),
       ],
