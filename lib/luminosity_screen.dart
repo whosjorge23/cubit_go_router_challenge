@@ -18,7 +18,7 @@ class LuminosityScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text("Luminosity"),
-              Text("${settingsCubitState.luminosityValue}")
+              Text("${(settingsCubitState.luminosityValue * 100).toStringAsFixed(2)}")
             ],
           ),
         ),

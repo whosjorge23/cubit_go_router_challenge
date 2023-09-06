@@ -18,7 +18,7 @@ class VolumeScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text("Volume"),
-                Text("${settingsCubitState.volumeValue}")
+                Text("${(settingsCubitState.volumeValue * 100).toStringAsFixed(2)}")
               ],
             ),
           ),
