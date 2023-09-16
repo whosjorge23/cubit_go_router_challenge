@@ -1,5 +1,4 @@
 import 'package:cubit_go_router_challenge/cubit/settings_cubit.dart';
-import 'package:cubit_go_router_challenge/cubit/volume_cubit.dart';
 import 'package:cubit_go_router_challenge/home_screen.dart';
 import 'package:cubit_go_router_challenge/luminosity_screen.dart';
 import 'package:cubit_go_router_challenge/settings_screen.dart';
